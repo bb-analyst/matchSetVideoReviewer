@@ -431,7 +431,13 @@ def update_video_time(clickData,angle,url):
 def switch_angle(angle,url,time):
     # get video half
     half = int(url.split('?')[0][-5])
-    new_url = f'{video_dict[half][angle]}#t={round(time)-1}'
+    #set new url
+    new_url = f'{video_dict[half][angle]}'
+
+    #if not time start at 0
+    if time is None:
+        return new_url, 0
+        
     return new_url,round(time)-1
 
 #Works
