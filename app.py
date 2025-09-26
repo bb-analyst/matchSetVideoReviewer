@@ -18,26 +18,23 @@ server = app.server
 video_dict = {
     1:
         {
-            0: 'https://s3.ap-southeast-2.amazonaws.com/nrl.rugby.league.prozone/NRL_lvl1_Statistics/NRL_Premiership/2025/Video/NRL_252804_CAN_BRI_CAM1_H1.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5V5NPAF7JCAR4TGY/20250916/ap-southeast-2/s3/aws4_request&X-Amz-Date=20250916T051318Z&X-Amz-Expires=604793&X-Amz-Signature=242307086efc03227292c2c585549b9dce260b3ce64e90047455347962d964dd&X-Amz-SignedHeaders=host&response-content-disposition=inline',
-            1: 'https://s3.ap-southeast-2.amazonaws.com/nrl.rugby.league.prozone/NRL_lvl1_Statistics/NRL_Premiership/2025/Video/NRL_252804_CAN_BRI_PGM_H1.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5V5NPAF7JCAR4TGY/20250916/ap-southeast-2/s3/aws4_request&X-Amz-Date=20250916T051405Z&X-Amz-Expires=604794&X-Amz-Signature=178e9e9f350a9a65b740d60b9a09aed2b9f07cbb83908ef93a016eb46c748973&X-Amz-SignedHeaders=host&response-content-disposition=inline',
+            0: 'http://nrl.rugby.league.prozone.s3.ap-southeast-2.amazonaws.com/NRL_lvl1_Statistics/NRL_Premiership/2025/Video/NRL_253001_MEL_CRO_PGM_H1.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5V5NPAF7JCAR4TGY/20250926/ap-southeast-2/s3/aws4_request&X-Amz-Date=20250926T214716Z&X-Amz-Expires=604797&X-Amz-Signature=df6ccdd23e7cf6622d986f10b09de877df03eb6d080bbc9a124fe9b8c0979379&X-Amz-SignedHeaders=host&response-content-disposition=inline',
+            1: 'http://nrl.rugby.league.prozone.s3.ap-southeast-2.amazonaws.com/NRL_lvl1_Statistics/NRL_Premiership/2025/Video/NRL_253001_MEL_CRO_CAM1_H1.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5V5NPAF7JCAR4TGY/20250926/ap-southeast-2/s3/aws4_request&X-Amz-Date=20250926T214749Z&X-Amz-Expires=604796&X-Amz-Signature=77c43644f9dfc8b0090880e62e1d8e5bc5ea93f08a5650c32e110c6067394bb6&X-Amz-SignedHeaders=host&response-content-disposition=inline',
         },
     2:
         {
-            0: 'https://s3.ap-southeast-2.amazonaws.com/nrl.rugby.league.prozone/NRL_lvl1_Statistics/NRL_Premiership/2025/Video/NRL_252804_CAN_BRI_CAM1_H2.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5V5NPAF7JCAR4TGY/20250916/ap-southeast-2/s3/aws4_request&X-Amz-Date=20250916T051444Z&X-Amz-Expires=604795&X-Amz-Signature=3162fe4e721e61b9a945628bbdea6c4afc4044c2b83c1be8eab6ce3c1204f550&X-Amz-SignedHeaders=host&response-content-disposition=inline',
-            1: 'https://s3.ap-southeast-2.amazonaws.com/nrl.rugby.league.prozone/NRL_lvl1_Statistics/NRL_Premiership/2025/Video/NRL_252804_CAN_BRI_PGM_H2.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5V5NPAF7JCAR4TGY/20250916/ap-southeast-2/s3/aws4_request&X-Amz-Date=20250916T051516Z&X-Amz-Expires=604794&X-Amz-Signature=8a61e80871ee4e0ab18d2fafe0477b648259ae9e319c29396f35dfeca08ad978&X-Amz-SignedHeaders=host&response-content-disposition=inline'
+            0: 'http://nrl.rugby.league.prozone.s3.ap-southeast-2.amazonaws.com/NRL_lvl1_Statistics/NRL_Premiership/2025/Video/NRL_253001_MEL_CRO_PGM_H2.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5V5NPAF7JCAR4TGY/20250926/ap-southeast-2/s3/aws4_request&X-Amz-Date=20250926T214815Z&X-Amz-Expires=604797&X-Amz-Signature=7c14b17d16faa8bb183f7e431ef82018154d2cb0d35a98f9cb463cedd6fce232&X-Amz-SignedHeaders=host&response-content-disposition=inline',
+            1: 'http://nrl.rugby.league.prozone.s3.ap-southeast-2.amazonaws.com/NRL_lvl1_Statistics/NRL_Premiership/2025/Video/NRL_253001_MEL_CRO_CAM1_H2.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5V5NPAF7JCAR4TGY/20250926/ap-southeast-2/s3/aws4_request&X-Amz-Date=20250926T214839Z&X-Amz-Expires=604798&X-Amz-Signature=ad31fa252e8c13570278065ac47f57def84a4508d98a40770e9bc7ecfd04ed1c&X-Amz-SignedHeaders=host&response-content-disposition=inline'
         }
 }
 
 #what to subtract off each vr for each half to sync to the right time
 offset_dict = {
     1: 0,
-    2: -78754,
-    3: -78754,
-    4: -78754,
-    5: -78754,
+    2: -73875
 }
 
-play_by_play_df = pd.read_excel("data/play_by_play_20251112840.xlsx")
+play_by_play_df = pd.read_excel("data/play_by_play_20251113010.xlsx")
 play_by_play_df['vr'] = play_by_play_df['min'] + play_by_play_df['Half'].map(offset_dict)
 play_by_play_df['vr_end'] = play_by_play_df['max'] + play_by_play_df['Half'].map(offset_dict)
 
